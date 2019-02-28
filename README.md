@@ -1,24 +1,79 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|uid|string||
+|provider|String||
 
-Things you may want to cover:
+### Association
+- has_many :templates
 
-* Ruby version
+## templatesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|questions_id|references|null: false, foreign_key: true|
 
-* System dependencies
+### Association
+- belong_to :user
+- has_many :profiles
+- has_one :questions
 
-* Configuration
+## questionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|question1|string|null: false|
+|question2|string|null: false|
+|question3|string|null: false|
+|question4|string|null: false|
+|question5|string|null: false|
+|templates_id|references|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belong_to :templates
 
-* Database initialization
+## Profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|respondents_id|references|null: false, foreign_key: true|
+|templates_id|references|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- has_many :respondents
+- belong_to :template
 
-* Services (job queues, cache servers, search engines, etc.)
+## respondentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|first_person|integer|null: false|
+|birthday|Srting|null: false|
+|blood|Srting|null: false|
+|sign|Srting|null: false|
+|charmpoint|Srting|null: false|
+|personality|Srting|null: false|
+|skill|Srting|null: false|
+|hobby|Srting|null: false|
+|favoritefood|Srting|null: false|
+|dislikefood|Srting|null: false|
+|dream|Srting|null: false|
+|wish|Srting|null: false|
+|profiles_id|references|null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+- belong_to :profile
+- has_one :answer
 
-* ...
+## answerテーブル
+|Column|Type|Options|
+|------|----|-------|
+|answer1|string|null: false|
+|answer2|string|null: false|
+|answer3|string|null: false|
+|answer4|string|null: false|
+|answer5|string|null: false|
+|respondents_id|references|null: false, foreign_key: true|
+
+### Association
+- belong_to :respondent
