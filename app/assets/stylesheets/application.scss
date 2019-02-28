@@ -1,0 +1,6 @@
+@import "materialize/components/color-variables";
+$primary-color: color("red", "lighten-2") !default;
+@import " materialize ";
+@import "font";
+@import "home";
+@import "./reset";
