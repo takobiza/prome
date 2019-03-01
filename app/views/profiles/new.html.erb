@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class= "profile_content">
+      <%= form_with url: template_profiles_path(@template), class: "col s12" do |f| %>
+      <div class="container">
+
+        <div class="profile_content_introduction">
+          <div class="cp_iptxt text-name">
+            <label class="ef">
+              <%= f.text_field :name, placeholder: "お名前"%>
+            </label>
+          </div>
+          <div class= "flex-height-bodyweight">
+            <div class="cp_iptxt text-height-bodyweight">
+              <label class="ef">
+                <%= f.text_field :height, placeholder: "身長"%>
+              </label>
+            </div>
+
+            <div class="cp_iptxt text-height-bodyweight">
+              <label class="ef">
+                <%= f.text_field :bodyweight, placeholder: "体重"%>
+              </label>
+            </div>
+          </div>
+          <div class="cp_iptxt text-profession">
+              <label class="ef">
+                <%= f.text_field :profession, class: "materialize-textarea", id: "icon_prefix2", placeholder: "職業"%>
+              </label>
+          </div>
+        </div>
+
+          <%= f.text_field :height%>
+          <%= f.text_field :bodyweight%>
+        </div>
+        <%= f.text_field :profession, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :birthday, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :blood, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :sign, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :charmpoint, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :personality, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :skill, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :hobby, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :favoritefood, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :dislikefood, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :dream, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :wish, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :answer1, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :answer2, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :answer3, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :answer4, class: "materialize-textarea", id: "icon_prefix2"%>
+        <%= f.text_field :answer5, class: "materialize-textarea", id: "icon_prefix2"%>
+
+        <button class="cp_button06">
+          <%= f.submit "作成" %>
+        </button>
+      <% end %>
+    <div class= "profile_content">
+  </div>
+</div>

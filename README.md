@@ -32,7 +32,7 @@
 |templates_id|references|null: false, foreign_key: true|
 
 ### Association
-- belong_to :templates
+- belongs_to :templates
 
 ## Profilesテーブル
 |Column|Type|Options|

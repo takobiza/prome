@@ -1,0 +1,70 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.copy_btn {
+    width: 300px;
+    height: 20px;
+    display: block;
+    border: 2px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+    padding: 30px 0 26px;
+    margin: 0 auto 60px;
+}
+
+.profile_content{
+  background-image: image-url('profile.png');
+  background-repeat: no-repeat;
+  background-size:  cover ;
+  height: 1000px;
+  width: 950px;
+  z-index: -1000;
+  &_introduction{
+    height: 300px;
+    width:750px;
+  }
+}
+
+.cp_iptxt {
+  position: relative;
+  font-family: inherit;
+}
+
+.text{
+  &-name{
+    width: 50%;
+    margin: 45px 45px 0px;
+  }
+
+  &-height-bodyweight{
+    width: 35%;
+    margin: 20px 45px 0px;
+  }
+
+  &-profession{
+    width: 50%;
+    margin: 20px 45px 0px;
+  }
+}
+
+
+
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: black;
+  border-bottom: 5px solid #1b2538;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.ef input[type='text']:focus {
+  border: 5px solid #da3c41;
+  outline: none;
+  font-family: inherit;
+}
