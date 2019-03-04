@@ -69,4 +69,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem "jquery-rails"
 gem 'material_icons'
 gem 'clipboard-rails'
-
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'font-awesome-sass', '~> 5.4.1'
+gem 'enum_help'

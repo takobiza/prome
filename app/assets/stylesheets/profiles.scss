@@ -14,57 +14,329 @@
     margin: 0 auto 60px;
 }
 
-.profile_content{
-  background-image: image-url('profile.png');
-  background-repeat: no-repeat;
-  background-size:  cover ;
-  height: 1000px;
-  width: 950px;
-  z-index: -1000;
-  &_introduction{
-    height: 300px;
-    width:750px;
-  }
+.profile_content {
+    background-image: image-url('test2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1400px;
+    width: 1000px;
+
+    z-index: -1000;
+
+    &_introduction {
+        margin-top: 30px;
+        height: 300px;
+        width: 750px;
+        display: flex;
+        justify-content: space-between;
+
+        &-text {
+            width: 350px;
+        }
+    }
+
+    &_question{
+      ol.list {
+      counter-reset: list;
+      /*数字をリセット*/
+      list-style-type: none;
+      padding: 0.5em;
+      }
+
+      ol.list li {
+          position: relative;
+          padding-left: 30px;
+          padding: 0.5em 0.5em 0.5em 30px;
+      }
+
+      ol.list li::before {
+          position: absolute;
+          display: inline-block;
+          top: 50%;
+          left: 0;
+          /* カウントさせる */
+          counter-increment: list;
+          content: counter(list);
+          /*装飾*/
+          padding: 0 0.2em 0 0.2em;
+          background: #F4511E;
+          color: #fff;
+          font-weight: bold;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          transform: translateY(-50%);
+      }
+    }
 }
 
-.cp_iptxt {
-  position: relative;
-  font-family: inherit;
+.text {
+    &-name {
+        width: 70%;
+        margin: 20px 45px 0px;
+    }
+
+    &-height-bodyweight {
+        width: 35%;
+        margin: 20px 45px 0px;
+    }
+
+    &-profession {
+        width: 70%;
+        margin: 20px 45px 0px;
+    }
+
+    &-year {
+        width: 10%;
+    }
+
+    &-month {
+        width: 10%;
+    }
+
+    &-day {
+        width: 10%;
+    }
+
+    &-sign {
+        width: 10%;
+    }
+
+    &-blood {
+        width: 10%;
+    }
+
+    &-charmpoint {
+        width: 30%;
+    }
+
+    &-personality {
+        width: 30%;
+    }
+
+    &-skill {
+        width: 30%;
+    }
+
+    &-hobby {
+        width: 30%;
+    }
+
+    &-favoritefood {
+        width: 30%;
+    }
+
+    &-dislikefood {
+        width: 30%;
+    }
+
+    &-dream {
+        width: 30%;
+    }
+
+    &-wish {
+        width: 30%;
+    }
+
+    &-answer {
+        width: 90%;
+    }
+
+    &-form input[type='text'] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em;
+    padding-top: 1.5em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: black;
+    border-bottom: 5px solid #1b2538;
+    border-radius: 4px;
+    font-family: inherit;
+    text-align: center;
+    }
+
 }
 
-.text{
-  &-name{
-    width: 50%;
-    margin: 45px 45px 0px;
-  }
 
-  &-height-bodyweight{
-    width: 35%;
-    margin: 20px 45px 0px;
-  }
+input::placeholder {
+    color: black;
+}
 
-  &-profession{
-    width: 50%;
-    margin: 20px 45px 0px;
-  }
+#img_field {
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 5px 8px;
+    border: solid 1px #EDBC6C;
+    color: #666;
+    position: relative;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 400px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: 0.3s ease-out;
+}
+
+#img_field i {
+    font-size: 100px;
+    color: #aaa;
+    line-height: 250px;
+    transition: 0.3s ease-out;
+}
+
+.fa-image {
+    margin-left: 150px;
+}
+
+#img_field i.add {
+    display: none;
+    font-size: 50px;
+    position: absolute;
+    top: -90px;
+    right: 15px;
+}
+
+#img_field:hover {
+    background-color: #EDBC6C;
+    transition: 0.3s ease-out;
+    opacity: 0.9;
+}
+
+#img_field:hover i {
+    transition: 0.3s ease-out;
+    display: block;
+    color: #fff;
+}
+
+select {
+    display: inline-block !important;
 }
 
 
+.flex {
+    display: flex;
 
-.cp_iptxt input[type='text'] {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: black;
-  border-bottom: 5px solid #1b2538;
-  border-radius: 4px;
-  font-family: inherit;
+    &-row1 {
+        display: flex;
+        width: 800px;
+        margin-top: 40px;
+
+        &-select {
+            position: relative;
+            font-family: inherit;
+            background-color: transparent;
+            width: 10%;
+            padding: 10px 10px 10px 0;
+            margin-top: 7px;
+            font-size: 18px;
+            border-radius: 0;
+            border: none;
+            border-bottom: 5px solid #1b2538;
+            text-align: center;
+        }
+    }
+
+    &-row2 {
+        display: flex;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row3 {
+        display: flex;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row4 {
+        display: flex;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row4 {
+        display: flex;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row5 {
+        display: flex;
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row6 {
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row7 {
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row8 {
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row9 {
+        width: 800px;
+        margin-top: 0px;
+    }
+
+    &-row10 {
+        width: 800px;
+        margin-top: 0px;
+    }
 }
-.ef input[type='text']:focus {
-  border: 5px solid #da3c41;
-  outline: none;
-  font-family: inherit;
+
+span {
+    line-height: 75px;
+    margin: 0px 3px;
+}
+
+ol.cp_clist {
+    counter-reset: cp_clist;
+    /*数字をリセット*/
+    list-style-type: none;
+    padding: 0.5em;
+}
+
+ol.cp_clist li {
+    position: relative;
+    padding-left: 30px;
+    padding: 0.5em 0.5em 0.5em 30px;
+}
+
+ol.cp_clist li::before {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 0;
+    /* カウントさせる */
+    counter-increment: cp_clist;
+    content: counter(cp_clist);
+    /*装飾*/
+    padding: 0 0.2em 0 0.2em;
+    background: #F4511E;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    transform: translateY(-50%);
 }

@@ -5,55 +5,156 @@
       <div class="container">
 
         <div class="profile_content_introduction">
-          <div class="cp_iptxt text-name">
-            <label class="ef">
-              <%= f.text_field :name, placeholder: "お名前"%>
-            </label>
-          </div>
-          <div class= "flex-height-bodyweight">
-            <div class="cp_iptxt text-height-bodyweight">
-              <label class="ef">
-                <%= f.text_field :height, placeholder: "身長"%>
-              </label>
+            <div class="profile_content_introduction-text">
+              <div class="text-form text-name">
+                <label class="ef">
+                  <%= f.text_field :name, placeholder: "お名前"%>
+                </label>
+              </div>
+              <div class= "flex-height-bodyweight">
+                <div class="text-form text-height-bodyweight">
+                  <label class="ef">
+                    <%= f.text_field :height, placeholder: "身長"%>
+                  </label>
+                </div>
+
+                <div class="text-form text-height-bodyweight">
+                  <label class="ef">
+                    <%= f.text_field :bodyweight, placeholder: "体重"%>
+                  </label>
+                </div>
+              </div>
+              <div class="text-form text-profession">
+                  <label class="ef">
+                    <%= f.text_field :profession, class: "materialize-textarea", id: "icon_prefix2", placeholder: "職業"%>
+                  </label>
+              </div>
             </div>
 
-            <div class="cp_iptxt text-height-bodyweight">
-              <label class="ef">
-                <%= f.text_field :bodyweight, placeholder: "体重"%>
-              </label>
+            <div class="profile_content_introduction-image">
+              <%= f.label '似顔絵や写真など自分を表す写真を貼ってね' %>
+              <div id="img_field" onClick="$('#file').click()" >
+                  <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+              </div>
+
+              <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
             </div>
-          </div>
-          <div class="cp_iptxt text-profession">
-              <label class="ef">
-                <%= f.text_field :profession, class: "materialize-textarea", id: "icon_prefix2", placeholder: "職業"%>
-              </label>
-          </div>
-        </div>
 
-          <%= f.text_field :height%>
-          <%= f.text_field :bodyweight%>
         </div>
-        <%= f.text_field :profession, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :birthday, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :blood, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :sign, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :charmpoint, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :personality, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :skill, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :hobby, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :favoritefood, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :dislikefood, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :dream, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :wish, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :answer1, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :answer2, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :answer3, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :answer4, class: "materialize-textarea", id: "icon_prefix2"%>
-        <%= f.text_field :answer5, class: "materialize-textarea", id: "icon_prefix2"%>
+          <div class="flex-row1">
+              <%= f.select :firstperson, Respondent.kinds.keys, {}, class: 'flex-row1-select',  placeholder: 0 %>
+              <span>は、</span>
+              <div class="text-form text-year">
+                  <%= f.text_field :year, class: "materialize-textarea", id: "icon_prefix2", placeholder: "年"%>
+              </div>
+              <span>年</span>
+              <div class="text-form text-month">
+                  <%= f.text_field :month, class: "materialize-textarea", id: "icon_prefix2", placeholder: "月"%>
+              </div>
+              <span>月</span>
+              <div class="text-form text-day">
+                  <%= f.text_field :day, class: "materialize-textarea", id: "icon_prefix2", placeholder: "日"%>
+              </div>
+              <span>日生まれの</span>
+              <div class="text-form text-sign">
+                <%= f.text_field :sign, class: "materialize-textarea", id: "icon_prefix2", placeholder: "星座" %>
+              </div>
+              <span>座で、</span>
+              <span>血液型は</span>
+              <div class="text-form text-blood">
+                <%= f.text_field :blood, class: "materialize-textarea", id: "icon_prefix2", placeholder: "血液型"%>
+              </div>
+          </div>
 
-        <button class="cp_button06">
-          <%= f.submit "作成" %>
-        </button>
+          <div class="flex-row2">
+            <span>チャームポイントは</span>
+            <div class="text-form text-charmpoint">
+              <%= f.text_field :charmpoint, class: "materialize-textarea", id: "icon_prefix2", placeholder: "チャームポイント"%>
+            </div>
+            <span>で、性格は</span>
+            <div class="text-form text-personality">
+              <%= f.text_field :personality, class: "materialize-textarea", id: "icon_prefix2", placeholder: "性格"%>
+            </div>
+            <span>かな。</span>
+          </div>
+
+          <div class="flex-row3">
+            <span>特技は</span>
+            <div class="text-form text-skill">
+              <%= f.text_field :skill, class: "materialize-textarea", id: "icon_prefix2", placeholder: "特技"%>
+            </div>
+            <span>で、趣味は</span>
+            <div class="text-form text-hobby">
+              <%= f.text_field :hobby, class: "materialize-textarea", id: "icon_prefix2", placeholder: "趣味"%>
+            </div>
+            <span>だよ。</span>
+          </div>
+
+          <div class="flex-row4">
+            <span>好きな食べ物は</span>
+            <div class="text-form text-favoritefood">
+              <%= f.text_field :favoritefood, class: "materialize-textarea", id: "icon_prefix2", placeholder: "好きな食べ物"%>
+            </div>
+            <span>で、嫌いな食べ物は</span>
+            <div class="text-form text-dislikefood">
+              <%= f.text_field :dislikefood, class: "materialize-textarea", id: "icon_prefix2", placeholder: "嫌いな食べ物"%>
+            </div>
+            <span>なんだ。</span>
+          </div>
+
+          <div class="flex-row5">
+            <span>将来の夢は</span>
+            <div class="text-form text-dream">
+              <%= f.text_field :dream, class: "materialize-textarea", id: "icon_prefix2", placeholder: "将来の夢"%>
+            </div>
+            <span>かな。</span>
+            <span>今一番欲しいものは</span>
+            <div class="text-form text-wish">
+              <%= f.text_field :wish, class: "materialize-textarea", id: "icon_prefix2", placeholder: "欲しい物"%>
+            </div>
+            <span>だよ!</span>
+          </div>
+
+          <div class=" profile_content_question">
+          <ol class="list">
+            <div class="flex-row6">
+              <div class="text-form text-answer">
+                <li><%= @template.question1 %></li>
+                <%= f.text_field :answer1, class: "materialize-textarea", id: "icon_prefix2", placeholder: ""%>
+              </div>
+            </div>
+
+            <div class="flex-row7">
+              <div class="text-form text-answer">
+                <li><%= @template.question2 %></li>
+                <%= f.text_field :answer2, class: "materialize-textarea", id: "icon_prefix2", placeholder: ""%>
+              </div>
+            </div>
+
+            <div class="flex-row8">
+              <div class="text-form text-answer">
+                <li><%= @template.question3 %></li>
+                <%= f.text_field :answer3, class: "materialize-textarea", id: "icon_prefix2", placeholder: ""%>
+              </div>
+            </div>
+
+            <div class="flex-row9">
+              <div class="text-form text-answer">
+                <li><%= @template.question4 %></li>
+                <%= f.text_field :answer4, class: "materialize-textarea", id: "icon_prefix2", placeholder: ""%>
+              </div>
+            </div>
+
+            <div class="flex-row10">
+              <div class="text-form text-answer">
+                <li><%= @template.question5 %></li>
+                <%= f.text_field :answer5, class: "materialize-textarea", id: "icon_prefix2", placeholder: ""%>
+              </div>
+            </div>
+          </ol>
+        </div>
+            <%= f.submit "作成" ,class: "button2"%>
+        </div>
       <% end %>
     <div class= "profile_content">
   </div>

@@ -5,14 +5,13 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @template = Template.find(params[:template_id]);
+    @template = Template.includes(:user).find(params[:template_id]);
     @respondent = Respondent.new();
   end
 
   def create
     @profile = Profile.new(template_id: params[:template_id]);
     @respondent = @profile.respondents.new(respondent_param);
-    binding.pry;
     @profile.save
     @respondent.save
     @answer = Answer.create(answer_param(@respondent));
@@ -20,7 +19,7 @@ class ProfilesController < ApplicationController
 
   private
   def respondent_param
-    params.permit(:name, :height, :bodyweight, :profession, :birthday, :blood,:sign, :charmpoint, :personality, :skill, :hobby,:favoritefood,:dislikefood, :dream,:wish)
+    params.permit(:name, :height, :bodyweight, :profession, :image,:year,:month, :day, :firstperson, :blood,:sign, :charmpoint, :personality, :skill, :hobby,:favoritefood,:dislikefood, :dream,:wish)
   end
 
   def answer_param(respondent)

@@ -6,3 +6,6 @@ $primary-color: color("red", "lighten-2") !default;
 @import "templates";
 @import "profiles";
 @import "./reset";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'button';
