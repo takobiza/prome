@@ -1,0 +1,25 @@
+
+      <div class="card Large">
+        <!-- <div class="card-image"> -->
+          <div class="bgpattern1 ">
+            <div class = "container">
+              <br />
+              <p>質問1: <%= template.question1%></p>
+              <p>質問2: <%= template.question2%></p>
+              <p>質問3: <%= template.question3%></p>
+              <p>質問4: <%= template.question4%></p>
+              <p>質問5: <%= template.question5%></p>
+            </div>
+
+        <!-- </div> -->
+          <div class="card-content">
+            <p>作成日: <%= template.created_at.strftime("%Y/%m/%d %H:%M")%></p>
+            <p>プロフィール数: 5</p>
+          </div>
+        </div>
+        <div class="card-action">
+          <%= link_to "テンプレートURLを共有する", template_profiles_path(template)%>
+          <a href="#">書いてくれたプロフィールをみる</a>
+        </div>
+      </div>
+

@@ -1,2 +1,17 @@
-<h1>Templates#index</h1>
-<p>Find me in app/views/templates/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <div class="grid-example col s12 center-align header-title"><h1>答えてもらうプロフィールのテンプレートを作成しましょう</h1></div>
+      <%= link_to new_template_path do %>
+        <div class="grid-example col s12 center-align header-title"><button class="button1">作成する</button></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container content">
+      <h2> あなたが作ったテンプレート一覧</h2>
+      <%= render @templates %>
+    </div>
+  </div>
+</div>
