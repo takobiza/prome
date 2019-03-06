@@ -1,0 +1,6 @@
+<% @profiles.each do |profile|%>
+  <% if !(profile.respondent.image.nil?)%>
+    <img src="<%= profile.respondent.image%>">
+  <%end%>
+<% end %>
+

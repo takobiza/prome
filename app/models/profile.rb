@@ -1,4 +1,4 @@
 class Profile < ApplicationRecord
-  has_many :respondents
+  has_one :respondent
   belongs_to :template
 end
