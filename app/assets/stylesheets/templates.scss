@@ -12,3 +12,21 @@
   background-size: 14px 14px;
 }
 
+.template_content {
+    background-image: image-url('test2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    &_introduction{
+      height: 300px;
+      width: 620px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &_row1{
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      margin-top: 20px;
+    }
+}

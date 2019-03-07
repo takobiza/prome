@@ -33,10 +33,12 @@
         }
     }
 
+    &_center{
+      margin-left: 30px;
+    }
     &_question{
       ol.list {
       counter-reset: list;
-      /*数字をリセット*/
       list-style-type: none;
       padding: 0.5em;
       }
@@ -150,8 +152,8 @@
     padding-top: 1.5em;
     transition: 0.3s;
     letter-spacing: 1px;
-    color: black;
-    border-bottom: 5px solid #1b2538;
+    color: black !important;
+    border-bottom: 5px solid #1b2538 !important;
     border-radius: 4px;
     font-family: inherit;
     text-align: center;
@@ -159,9 +161,8 @@
 
 }
 
-
 label.placeholder {
-    color: black;
+    color: black !important;
     padding-left: 15px;
     padding-top: 7px;
 }
@@ -228,7 +229,7 @@ select {
         display: flex;
         width: 800px;
         margin-top: 40px;
-
+        font-size: 14px;
         &-select {
             position: relative;
             font-family: inherit;
@@ -241,6 +242,7 @@ select {
             border: none;
             border-bottom: 5px solid #1b2538;
             text-align: center;
+            color: black !important;
         }
     }
 
@@ -323,10 +325,8 @@ ol.cp_clist li::before {
     display: inline-block;
     top: 50%;
     left: 0;
-    /* カウントさせる */
     counter-increment: cp_clist;
     content: counter(cp_clist);
-    /*装飾*/
     padding: 0 0.2em 0 0.2em;
     background: #F4511E;
     color: #fff;
@@ -423,3 +423,10 @@ ol.cp_clist li::before {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
+
+.profile-image{
+  text-align: center;
+}
+
+
+

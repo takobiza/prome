@@ -1,0 +1,213 @@
+<div class="container">
+    <div class="error">
+    </div>
+    <div class="row">
+        <div class="profile_content">
+            <%= form_with model: @respondent, local: true, class: "col s12" do |f| %>
+            <div class="container">
+                <div class="profile_content_introduction">
+                    <div class="profile_content_introduction-text">
+                        <div class="text-form text-name">
+                            <label class="ef">
+                                <div class="input-field">
+                                    <%= f.text_field :name, class: "input_text",maxlength: :"15",readonly: true%>
+                                    <%= f.label :"お名前(15文字以内)" , for: :textarea2, class: "placeholder"%>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex-height-bodyweight">
+                            <div class="text-form text-height-bodyweight">
+                                <label class="ef">
+                                    <div class="input-field">
+                                        <%= f.text_field :height, maxlength: :"5",placeholder: " ",readonly: true%>
+                                        <%= f.label :"身長" , for: :textarea2,  class: "placeholder"%>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="text-form text-height-bodyweight">
+                                <label class="ef">
+                                    <div class="input-field">
+                                        <%= f.text_field :bodyweight, maxlength: :"5",placeholder: " ",readonly: true%>
+                                        <%= f.label :"体重" , for: :textarea2, class: "placeholder"%>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="text-form text-profession">
+                            <label class="ef">
+                                <div class="input-field">
+                                    <%= f.text_field :profession, class: "input_text",maxlength: :"15", placeholder: " ",readonly: true%>
+                                    <%= f.label :"職業(15文字以内)" , for: :textarea2, class: "placeholder"%>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="profile-image">
+                        <%= f.label '似顔絵や写真など自分を表す写真を貼ってね' %>
+                        <img src="<%= @respondent.image%>">
+                    </div>
+                </div>
+                <div class="flex-row1">
+                    <%= f.select :firstperson, Respondent.kinds.keys, {}, class: 'flex-row1-select',  placeholder: 0 ,disabled: true%>
+                    <span>は、</span>
+                    <% birthday = @respondent.birthday.split(",",3)%>
+                    <div class="text-form text-year">
+                        <div class="input-field">
+                            <%= f.text_field :year, maxlength: :"6", placeholder: " ",readonly: true, value: birthday[0]%>
+                        </div>
+                    </div>
+                    <span>年</span>
+                    <div class="text-form text-month">
+                        <div class="input-field">
+                            <%= f.text_field :month, maxlength: :"4", placeholder: " ",readonly: true,value: birthday[1]%>
+                        </div>
+                    </div>
+                    <span>月</span>
+                    <div class="text-form text-day">
+                        <div class="input-field">
+                            <%= f.text_field :day, maxlength: :"4", placeholder: " ",readonly: true, value: birthday[2]%>
+                        </div>
+                    </div>
+                    <span>日生まれの</span>
+                    <div class="text-form text-sign">
+                        <div class="input-field">
+                            <%= f.text_field :sign, maxlength: :"4", placeholder: " ",readonly: true%>
+                        </div>
+                    </div>
+                    <span>座で、</span>
+                    <span>血液型は</span>
+                    <div class="text-form text-blood">
+                        <div class="input-field">
+                            <%= f.text_field :blood, maxlength: :"4", placeholder: " ",readonly: true%>
+                        </div>
+                    </div>
+                    <span>です。</span>
+                </div>
+                <div class="flex-row2">
+                    <span>チャームポイントは</span>
+                    <div class="text-form text-charmpoint">
+                        <div class="input-field">
+                            <%= f.text_field :charmpoint, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"チャームポイント(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>で、性格は</span>
+                    <div class="text-form text-personality">
+                        <div class="input-field">
+                            <%= f.text_field :personality, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"性格(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>かな。</span>
+                </div>
+                <div class="flex-row3">
+                    <span>特技は</span>
+                    <div class="text-form text-skill">
+                        <div class="input-field">
+                            <%= f.text_field :skill, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"特技(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>で、趣味は</span>
+                    <div class="text-form text-hobby">
+                        <div class="input-field">
+                            <%= f.text_field :hobby, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"趣味(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>だよ。</span>
+                </div>
+                <div class="flex-row4">
+                    <span>好きな食べ物は</span>
+                    <div class="text-form text-favoritefood">
+                        <div class="input-field">
+                            <%= f.text_field :favoritefood, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"好きな食べ物(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>で、嫌いな食べ物は</span>
+                    <div class="text-form text-dislikefood">
+                        <div class="input-field">
+                            <%= f.text_field :dislikefood, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"嫌いな食べ物(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>なんだ。</span>
+                </div>
+                <div class="flex-row5">
+                    <span>将来の夢は</span>
+                    <div class="text-form text-dream">
+                        <div class="input-field">
+                            <%= f.text_field :dream, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"将来の夢(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>かな。</span>
+                    <span>今一番欲しいものは</span>
+                    <div class="text-form text-wish">
+                        <div class="input-field">
+                            <%= f.text_field :wish, class: "input_text",maxlength: :"13", placeholder: " ",readonly: true%>
+                            <%= f.label :"欲しい物(13文字以内)" , for: :textarea2, class: "placeholder"%>
+                        </div>
+                    </div>
+                    <span>だよ!</span>
+                </div>
+                <div class=" profile_content_question">
+                    <ol class="list">
+                        <div class="flex-row6">
+                            <div class="text-form text-answer">
+                                <li>
+                                    <%= @template.question1 %>
+                                </li>
+                                <div class="input-field">
+                                    <%= f.text_field :answer1, class: "input_text",maxlength: :"30", value: :"#{@answer.answer1}",readonly: true%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row7">
+                            <div class="text-form text-answer">
+                                <li>
+                                    <%= @template.question2 %>
+                                </li>
+                                <div class="input-field">
+                                    <%= f.text_field :answer2, class: "input_text",maxlength: :"30", value: :"#{@answer.answer2}",readonly: true%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row8">
+                            <div class="text-form text-answer">
+                                <li>
+                                    <%= @template.question3 %>
+                                </li>
+                                <div class="input-field">
+                                    <%= f.text_field :answer3, class: "input_text",maxlength: :"30", value: :"#{@answer.answer3}",readonly: true%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row9">
+                            <div class="text-form text-answer">
+                                <li>
+                                    <%= @template.question4 %>
+                                </li>
+                                <div class="input-field">
+                                    <%= f.text_field :answer4, class: "input_text",maxlength: :"30", value: :"#{@answer.answer4}",readonly: true%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row10">
+                            <div class="text-form text-answer">
+                                <li>
+                                    <%= @template.question5 %>
+                                </li>
+                                <div class="input-field">
+                                    <%= f.text_field :answer5, class: "input_text",maxlength: :"30", value: :"#{@answer.answer5}",readonly: true%>
+                                </div>
+                            </div>
+                        </div>
+                    </ol>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+  </div>

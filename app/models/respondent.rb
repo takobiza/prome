@@ -8,6 +8,6 @@ class Respondent < ApplicationRecord
   validates :name, presence: true
 
   def set_birthday
-    self.birthday = [@year, @month,@day].join(" ")
+    self.birthday = [@year, @month,@day].join(",")
   end
 end
