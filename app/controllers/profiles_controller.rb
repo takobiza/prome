@@ -31,6 +31,12 @@ class ProfilesController < ApplicationController
 
   end
 
+  def show
+    @template = Template.find(params[:template_id]);
+    @profile = Profile.find(params[:id]);
+    @respondent = @profile.respondent;
+    @answer = @respondent.answer;
+  end
   private
   def respondent_param(profile)
     params.permit(:name, :height, :bodyweight, :profession, :image,:year,:month, :day, :firstperson, :blood,:sign, :charmpoint, :personality, :skill, :hobby,:favoritefood,:dislikefood, :dream,:wish).merge(profile_id: profile.id)

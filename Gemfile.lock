@@ -56,6 +56,7 @@ GEM
     bootsnap (1.4.1)
       msgpack (~> 1.0)
     builder (3.2.3)
+    bxslider-rails (4.2.5.1)
     byebug (11.0.0)
     capybara (3.14.0)
       addressable
@@ -253,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bxslider-rails
   byebug
   capybara (>= 2.15)
   carrierwave

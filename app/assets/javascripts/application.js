@@ -17,5 +17,6 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require clipboard
+//= require bxslider
 //= require_tree .
 

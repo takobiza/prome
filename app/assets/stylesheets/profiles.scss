@@ -33,40 +33,41 @@
         }
     }
 
-    &_question{
-      ol.list {
-      counter-reset: list;
-      /*数字をリセット*/
-      list-style-type: none;
-      padding: 0.5em;
-      }
+    &_center {
+        margin-left: 30px;
+    }
 
-      ol.list li {
-          position: relative;
-          padding-left: 30px;
-          padding: 0.5em 0.5em 0.5em 30px;
-      }
+    &_question {
+        ol.list {
+            counter-reset: list;
+            list-style-type: none;
+            padding: 0.5em;
+        }
 
-      ol.list li::before {
-          position: absolute;
-          display: inline-block;
-          top: 50%;
-          left: 0;
-          /* カウントさせる */
-          counter-increment: list;
-          content: counter(list);
-          /*装飾*/
-          padding: 0 0.2em 0 0.2em;
-          background: #F4511E;
-          color: #fff;
-          font-weight: bold;
-          border-radius: 50%;
-          width: 25px;
-          height: 25px;
-          line-height: 25px;
-          text-align: center;
-          transform: translateY(-50%);
-      }
+        ol.list li {
+            position: relative;
+            padding-left: 30px;
+            padding: 0.5em 0.5em 0.5em 30px;
+        }
+
+        ol.list li::before {
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            left: 0;
+            counter-increment: list;
+            content: counter(list);
+            padding: 0 0.2em 0 0.2em;
+            background: #F4511E;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            transform: translateY(-50%);
+        }
     }
 }
 
@@ -143,76 +144,75 @@
     }
 
     &-form input[type='text'] {
-    font: 15px/24px sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.3em;
-    padding-top: 1.5em;
-    transition: 0.3s;
-    letter-spacing: 1px;
-    color: black;
-    border-bottom: 5px solid #1b2538;
-    border-radius: 4px;
-    font-family: inherit;
-    text-align: center;
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.3em;
+        padding-top: 1.5em;
+        transition: 0.3s;
+        letter-spacing: 1px;
+        color: black !important;
+        border-bottom: 5px solid #1b2538 !important;
+        border-radius: 4px;
+        font-family: inherit;
+        text-align: center;
     }
 
 }
 
-
 label.placeholder {
-    color: black;
+    color: black !important;
     padding-left: 15px;
     padding-top: 7px;
 }
 
 #img_field {
-  font-size: 15px;
-  margin-top: 10px;
-  padding: 5px 8px;
-  border: solid 1px #EDBC6C;
-  color: #666;
-  position: relative;
-  padding: 0;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 280px;
-  height: 280px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #fff;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: 0.3s ease-out;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 5px 8px;
+    border: solid 1px #EDBC6C;
+    color: #666;
+    position: relative;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 280px;
+    height: 280px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: 0.3s ease-out;
 }
 
 #img_field i {
-  font-size: 100px;
-  color: #aaa;
-  padding-left: 85px;
-  line-height: 280px;
-  transition: 0.3s ease-out;
+    font-size: 100px;
+    color: #aaa;
+    padding-left: 85px;
+    line-height: 280px;
+    transition: 0.3s ease-out;
 }
 
 #img_field i.add {
-  display: none;
-  font-size: 50px;
-  position: absolute;
-  top: -90px;
-  right: 15px;
+    display: none;
+    font-size: 50px;
+    position: absolute;
+    top: -90px;
+    right: 15px;
 }
 
 #img_field:hover {
-  background-color: #EDBC6C;
-  transition: 0.3s ease-out;
-  opacity: 0.9;
+    background-color: #EDBC6C;
+    transition: 0.3s ease-out;
+    opacity: 0.9;
 }
 
 #img_field:hover i {
-  transition: 0.3s ease-out;
-  display: block;
-  color: #fff;
+    transition: 0.3s ease-out;
+    display: block;
+    color: #fff;
 }
 
 
@@ -228,6 +228,7 @@ select {
         display: flex;
         width: 800px;
         margin-top: 40px;
+        font-size: 14px;
 
         &-select {
             position: relative;
@@ -241,6 +242,7 @@ select {
             border: none;
             border-bottom: 5px solid #1b2538;
             text-align: center;
+            color: black !important;
         }
     }
 
@@ -323,10 +325,8 @@ ol.cp_clist li::before {
     display: inline-block;
     top: 50%;
     left: 0;
-    /* カウントさせる */
     counter-increment: cp_clist;
     content: counter(cp_clist);
-    /*装飾*/
     padding: 0 0.2em 0 0.2em;
     background: #F4511E;
     color: #fff;
@@ -340,81 +340,83 @@ ol.cp_clist li::before {
 }
 
 .overlay {
-  z-index: 9999;
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
+    z-index: 9999;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 .overlay .crop_modal {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
 }
 
 .overlay .crop_modal .cropper-view-box {
-  outline: none;
-  border: solid 2px #C84289;
-  border-radius: 5px;
+    outline: none;
+    border: solid 2px #C84289;
+    border-radius: 5px;
 }
 
 .overlay .close_btn {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 20px;
-  right: 40px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
 }
+
 .overlay .close_btn:before {
-  display: block;
-  content: "";
-  width: 1px;
-  height: 36px;
-  background-color: #fff;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 8px;
-  left: 25px;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 36px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 8px;
+    left: 25px;
 }
+
 .overlay .close_btn:after {
-  display: block;
-  content: "";
-  width: 1px;
-  height: 36px;
-  background-color: #fff;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 8px;
-  left: 25px;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 36px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 8px;
+    left: 25px;
 }
 
 .overlay .select_icon_btn {
-  letter-spacing: normal;
-  width: 200px;
-  height: 40px;
-  line-height: 40px;
-  background-color: #C84289;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  box-sizing: border-box;
-  position: absolute;
-  top: 530px;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  cursor: pointer;
+    letter-spacing: normal;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #C84289;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 530px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-.character-counter{
+.character-counter {
     line-height: 1px;
 }
 
@@ -422,4 +424,38 @@ ol.cp_clist li::before {
     position: relative;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.profile-image {
+    text-align: center;
+}
+
+#firstperson {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 10%;
+    padding: 10px 10px 10px 0;
+    margin-top: 7px;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 5px solid #1b2538;
+    text-align: center;
+    color: black !important;
+}
+
+#respondent_firstperson {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 10%;
+    padding: 10px 10px 10px 0;
+    margin-top: 7px;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 5px solid #1b2538;
+    text-align: center;
+    color: black !important;
 }

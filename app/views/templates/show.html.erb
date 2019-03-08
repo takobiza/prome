@@ -1,6 +1,77 @@
-<% @profiles.each do |profile|%>
-  <% if !(profile.respondent.image.nil?)%>
-    <img src="<%= profile.respondent.image%>">
-  <%end%>
+<% if @profiles.length() != 0 %>
+<ul class="bxslider">
+    <% @profiles.each do |profile|%>
+    <li>
+        <div class="template_content">
+            <div class="bxslider_content">
+                <%= form_with model: profile.respondent, local: true, class: "col s12" do |f| %>
+                <div class="template_content_introduction">
+                    <div class="profile_content_introduction-text">
+                        <div class="text-form text-name">
+                            <label class="ef">
+                                <div class="input-field">
+                                    <%= f.text_field :name, class: "input_text",maxlength: :"15",readonly: true%>
+                                    <%= f.label :"お名前(15文字以内)" , for: :textarea2, class: "placeholder"%>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex-height-bodyweight">
+                            <div class="text-form text-height-bodyweight">
+                                <label class="ef">
+                                    <div class="input-field">
+                                        <%= f.text_field :height, maxlength: :"5",placeholder: " ",readonly: true%>
+                                        <%= f.label :"身長" , for: :textarea2,  class: "placeholder"%>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="text-form text-height-bodyweight">
+                                <label class="ef">
+                                    <div class="input-field">
+                                        <%= f.text_field :bodyweight, maxlength: :"5",placeholder: " ",readonly: true%>
+                                        <%= f.label :"体重" , for: :textarea2, class: "placeholder"%>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="text-form text-profession">
+                            <label class="ef">
+                                <div class="input-field">
+                                    <%= f.text_field :profession, class: "input_text",maxlength: :"15", placeholder: " ",readonly: true%>
+                                    <%= f.label :"職業(15文字以内)" , for: :textarea2, class: "placeholder"%>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field image">
+                        <%= f.label '似顔絵や写真など自分を表す写真を貼ってね' %>
+                        <img src="<%= profile.respondent.image%>">
+                    </div>
+                </div>
+                <div class="template_content_row1">
+                    <div>
+                        投稿日時:
+                        <%= profile.created_at.strftime("%Y/%m/%d %H:%M")%>
+                    </div>
+                    <div>
+                        <%= link_to "詳細をみる",template_profile_path(@template,profile)%>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </li>
+    <% end %>
+</ul>
+<% else %>
+<div class="container">
+    まだプロフィールがありません
+    URLを共有しましょう！
+    <p>このURLを友達に共有してください</p>
+    <div>
+        <textarea id="bar"><%=new_template_profile_url(@template)%></textarea>
+        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
+            URLをコピーする
+        </button>
+    </div>
+</div>
 <% end %>
-
