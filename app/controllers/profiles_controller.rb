@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
     @respondent = @profile.respondent;
     @answer = @respondent.answer;
   end
+
   private
   def respondent_param(profile)
     params.permit(:name, :height, :bodyweight, :profession, :image,:year,:month, :day, :firstperson, :blood,:sign, :charmpoint, :personality, :skill, :hobby,:favoritefood,:dislikefood, :dream,:wish).merge(profile_id: profile.id)
