@@ -2,7 +2,7 @@ class Respondent < ApplicationRecord
   belongs_to :profile
   has_one :answer
   mount_uploader :image, MessageImageUploader
-  enum kind: [:"私", :"ぼく", :"俺", :"あたし"]
+  enum firstperson: {watashi: 0, ore: 1, boku: 2,atashi: 3}
   attr_writer :year, :month, :day
   before_validation :set_birthday
   validates :name, presence: true

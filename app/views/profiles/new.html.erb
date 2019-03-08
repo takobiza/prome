@@ -56,7 +56,7 @@
 
         </div>
           <div class="flex-row1">
-              <%= f.select :firstperson, Respondent.kinds.keys, {}, class: 'flex-row1-select',  placeholder: 0 %>
+              <%= f.select :firstperson, Respondent.firstpeople.keys.map {|k| [I18n.t("enums.respondent.firstperson.#{k}"), k]}, class: 'flex-row1-select'%>
               <span>は、</span>
               <div class="text-form text-year">
                 <div class="input-field">

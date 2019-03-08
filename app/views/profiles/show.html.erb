@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="flex-row1">
-                    <%= f.select :firstperson, Respondent.kinds.keys, {}, class: 'flex-row1-select',  placeholder: 0 ,disabled: true%>
+                    <%= f.select :firstperson, Respondent.firstpeople.keys.map {|k| [I18n.t("enums.respondent.firstperson.#{k}"), k]},disabled: true%>
                     <span>は、</span>
                     <% birthday = @respondent.birthday.split(",",3)%>
                     <div class="text-form text-year">
