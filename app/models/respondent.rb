@@ -6,7 +6,7 @@ class Respondent < ApplicationRecord
   attr_writer :year, :month, :day
   before_validation :set_birthday
   validates :name, presence: true
-  @sentenceEnder = [["です。","かな。","だよ。","なんだ。","かな。","だよ!"],["だ！","だ。","だ。","だ。","だ!!","だ!"],["です。","かな。","だよ。","なんだ。","かな","だよ!"],["よ!","よ。","よ。","よ。","よ!!","よ!"];
+  @sentenceEnder = [["です。","かな。","だよ。","なんだ。","かな。","だよ!"],["だ！","だ。","だ。","だ。","だ!!","だ!"],["です。","かな。","だよ。","なんだ。","かな","だよ!"],["よ!","よ。","よ。","よ。","よ!!","よ!"]];
 
   attr_accessor :sentenceEnder
 

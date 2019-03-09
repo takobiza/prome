@@ -31,15 +31,7 @@ $(document).on('turbolinks:load', function() {
                 $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(3,3) %>`);
                 $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(3,4) %>`);
                 $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(3,5) %>`);
-            } else if (select_value == "osuora") {
-                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(4,0) %>`);
-                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(4,1) %>`);
-                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(4,2) %>`);
-                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(4,3) %>`);
-                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(4,4) %>`);
-                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(4,5) %>`);
             }
-
         });
     });
 });
