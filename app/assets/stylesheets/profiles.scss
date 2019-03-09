@@ -20,6 +20,7 @@
     background-size: contain;
     height: 1400px;
     width: 1000px;
+    font-family: 'font1';
 
     &_introduction {
         margin-top: 30px;
@@ -458,4 +459,12 @@ ol.cp_clist li::before {
     border-bottom: 5px solid #1b2538;
     text-align: center;
     color: black !important;
+}
+
+.icon-block {
+  padding: 0 15px;
+  text-align: center;
+}
+.icon-block .material-icons {
+    font-size: inherit;
 }
