@@ -1,0 +1,45 @@
+$(document).on('turbolinks:load', function() {
+    $(document).ready(function() {
+        $('#firstperson').change(function(e) {
+            var select_value = $('option:selected').val();
+            console.log(select_value);
+            if (select_value == "watashi") {
+                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(0,0) %>`);
+                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(0,1) %>`);
+                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(0,2) %>`);
+                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(0,3) %>`);
+                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(0,4) %>`);
+                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(0,5) %>`);
+            } else if (select_value == "ore") {
+                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(1,0) %>`);
+                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(1,1) %>`);
+                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(1,2) %>`);
+                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(1,3) %>`);
+                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(1,4) %>`);
+                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(1,5) %>`);
+            } else if (select_value == "boku") {
+                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(2,0) %>`);
+                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(2,1) %>`);
+                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(2,2) %>`);
+                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(2,3) %>`);
+                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(2,4) %>`);
+                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(2,5) %>`);
+            } else if (select_value == "atashi") {
+                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(3,0) %>`);
+                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(3,1) %>`);
+                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(3,2) %>`);
+                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(3,3) %>`);
+                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(3,4) %>`);
+                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(3,5) %>`);
+            } else if (select_value == "osuora") {
+                $('.sentence_ender1').html(`<%= Respondent.return_sentence_ender(4,0) %>`);
+                $('.sentence_ender2').html(`<%= Respondent.return_sentence_ender(4,1) %>`);
+                $('.sentence_ender3').html(`<%= Respondent.return_sentence_ender(4,2) %>`);
+                $('.sentence_ender4').html(`<%= Respondent.return_sentence_ender(4,3) %>`);
+                $('.sentence_ender5').html(`<%= Respondent.return_sentence_ender(4,4) %>`);
+                $('.sentence_ender6').html(`<%= Respondent.return_sentence_ender(4,5) %>`);
+            }
+
+        });
+    });
+});

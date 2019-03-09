@@ -81,7 +81,7 @@
                             <%= f.text_field :blood, maxlength: :"4", placeholder: " ",readonly: true%>
                         </div>
                     </div>
-                    <span>です。</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],0)%></span>
                 </div>
                 <div class="flex-row2">
                     <span>チャームポイントは</span>
@@ -98,7 +98,7 @@
                             <%= f.label :"性格(13文字以内)" , for: :textarea2, class: "placeholder"%>
                         </div>
                     </div>
-                    <span>かな。</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],1) %></span>
                 </div>
                 <div class="flex-row3">
                     <span>特技は</span>
@@ -115,7 +115,7 @@
                             <%= f.label :"趣味(13文字以内)" , for: :textarea2, class: "placeholder"%>
                         </div>
                     </div>
-                    <span>だよ。</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],2) %></span>
                 </div>
                 <div class="flex-row4">
                     <span>好きな食べ物は</span>
@@ -132,7 +132,7 @@
                             <%= f.label :"嫌いな食べ物(13文字以内)" , for: :textarea2, class: "placeholder"%>
                         </div>
                     </div>
-                    <span>なんだ。</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],3) %></span>
                 </div>
                 <div class="flex-row5">
                     <span>将来の夢は</span>
@@ -142,7 +142,7 @@
                             <%= f.label :"将来の夢(13文字以内)" , for: :textarea2, class: "placeholder"%>
                         </div>
                     </div>
-                    <span>かな。</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],4) %></span>
                     <span>今一番欲しいものは</span>
                     <div class="text-form text-wish">
                         <div class="input-field">
@@ -150,7 +150,7 @@
                             <%= f.label :"欲しい物(13文字以内)" , for: :textarea2, class: "placeholder"%>
                         </div>
                     </div>
-                    <span>だよ!</span>
+                    <span><%= Respondent.return_sentence_ender(Respondent.firstpeople[@respondent.firstperson],5) %></span>
                 </div>
                 <div class=" profile_content_question">
                     <ol class="list">
