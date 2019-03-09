@@ -1,4 +1,6 @@
 class TemplatesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @templates = Template.where(user_id: current_user.id);
   end
@@ -13,9 +15,10 @@ class TemplatesController < ApplicationController
   end
 
   def show
-    @template = Template.find(params[:id]);
+    @template = Template.find(Base64.decode64(params[:id]));
     @profiles = @template.profiles.includes(:respondent);
   end
+
   private
   def template_params
     params.require(:template).permit(:question1, :question2, :question3, :question4, :question5).merge(user_id: current_user.id);
