@@ -69,9 +69,15 @@
     <p>このURLを友達に共有してください</p>
     <div>
         <textarea id="bar"><%=new_template_profile_url(@template)%></textarea>
-        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
+        <button class="clipboard-btn button4" data-clipboard-action="copy" data-clipboard-target="#bar">
             URLをコピーする
         </button>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url=<%=new_template_profile_url(@template)%>
+            data-text = "ProMe~プロフィール帳作成アプリ~ プロフィールを書いて下さい！"
+            data-via =
+            <%= current_user.name%>
+            >ツイート</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
 <% end %>
