@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery.steps
+//= require sweetalert
 //= require materialize-sprockets
 //= require clipboard
 //= require bxslider

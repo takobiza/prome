@@ -6,10 +6,56 @@
 }
 
 .bgpattern1 {
-  background-color: #8be4f0;
-  background-image:
-   linear-gradient(-90deg, #80deea 50%, transparent 50%, transparent);
-  background-size: 14px 14px;
+  background:
+   linear-gradient(90deg, #ffffff 0.2em, transparent 0),
+   linear-gradient(90deg, #bbdefb 50%, transparent 0),
+   linear-gradient(90deg, #ef9a9a 50%, #7986cb 0);
+  background-size: 20px,40px,80px;
+}
+
+.bgpattern{
+  position: relative;
+  &_content{
+    width: 70%;
+    height: 200px;
+  }
+}
+.bgpattern::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: repeating-linear-gradient(45deg,
+    #ffffff, #ffffff 10px,
+    #5C6BC0 0, #5C6BC0 20px,
+    #ffffff 0, #ffffff 30px,
+    #C2185B 0, #C2185B 40px);
+}
+.bgpattern::before {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  content: '';
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+.zindex{
+  position: absolute;
+  margin-left: 20px;
+  font-weight: bold;
+  color: black;
+  z-index: 5;
+}
+
+.container {
+    width: 70%;
+    height: 138px;
 }
 
 .template_content {
@@ -86,4 +132,12 @@ i.large {
 }
 .top-h3:after {
   right: 7px;
+}
+
+.wizard > .steps > ul > li {
+    width: 20% !important;
+}
+
+.wizard > .content {
+    min-height: 16em !important;
 }

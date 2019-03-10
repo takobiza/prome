@@ -1,49 +1,48 @@
-<div class="container">
-  <div class="row">
-    <h1>自由回答の質問5つ入力してください</h1>
-    <%= form_with model: @template, class: "col s12" do |f| %>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <%= f.text_field :question1, class: "materialize-textarea", id: "icon_prefix2"%>
-          <%= f.label :"質問1",for: "icon_prefix2"%>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <%= f.text_field :question2, class: "materialize-textarea", id: "icon_prefix3"%>
-          <%= f.label :"質問2",for: "icon_prefix3"%>
-        </div>
-      </div>
+<%= form_with url: templates_path, local: true, class: "", id: "example-form" do |f| %>
+    <div>
+        <h3>質問1</h3>
+        <section>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <%= f.text_area :question1, class: "materialize-textarea required", id: "icon_prefix2 question1"%>
+            <%= f.label :"質問1",for: "icon_prefix2 userName"%>
+          </div>
+        </section>
+        <h3>質問2</h3>
+        <section>
+            <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <%= f.text_area :question2, class: "materialize-textarea required", id: "icon_prefix2 question2"%>
+            <%= f.label :"質問2",for: "icon_prefix2"%>
+          </div>
+        </section>
+        <h3>質問3</h3>
+        <section>
+            <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <%= f.text_area :question3, class: "materialize-textarea required", id: "icon_prefix2 question3"%>
+            <%= f.label :"質問3",for: "icon_prefix2"%>
+          </div>
+        </section>
+        <h3>質問4</h3>
+        <section>
+            <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <%= f.text_area :question4, class: "materialize-textarea required", id: "icon_prefix2 question4"%>
+            <%= f.label :"質問4",for: "icon_prefix2"%>
+          </div>
+        </section>
+        <h3>質問5</h3>
+        <section>
+            <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <%= f.text_area :question5, class: "materialize-textarea required", id: "icon_prefix2 question5"%>
+            <%= f.label :"質問5",for: "icon_prefix2"%>
+          </div>
+        </section>
+    </div>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <%= f.text_field :question3, class: "materialize-textarea", id: "icon_prefix4"%>
-          <%= f.label :"質問3",for: "icon_prefix4"%>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <%= f.text_field :question4, class: "materialize-textarea", id: "icon_prefix5"%>
-          <%= f.label :"質問4",for: "icon_prefix5"%>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <%= f.text_field :question5, class: "materialize-textarea", id: "icon_prefix6"%>
-          <%= f.label :"質問5",for: "icon_prefix6"%>
-        </div>
-      </div>
-        <%= f.submit "作成", class: "cp_btn" %>
-    <% end %>
-  </div>
-</div>
-
+  <%= f.submit "作成", class: "cp_btn", style: "display:none;", id: "questionsbutton"%>
+<% end %>
