@@ -11,6 +11,9 @@ $(document).on('turbolinks:load', function() {
                 if (text == ""){
                   sweetAlert("質問は必須入力です");
                   return false;
+                }else if(text.length >= 30){
+                  sweetAlert("30文字以上は登録出来ません");
+                  return false;
                 }
                 console.log(text);
                 return true;

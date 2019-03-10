@@ -93,6 +93,7 @@ $(function() {
                     var html = messageBuildHTML(datas.errormessage);
                     $('.error').append(html);
                     window.scrollTo(0,50);
+                    sweetAlert("名前は必須入力です");
                  }
                 }).fail(function() {
                   alert('失敗');
