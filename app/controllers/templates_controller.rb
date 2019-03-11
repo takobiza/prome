@@ -2,7 +2,11 @@ class TemplatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @templates = Template.where(user_id: current_user.id);
+    @templates = Template.where(user_id: current_user.id).page(params[:page]).per(3);
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

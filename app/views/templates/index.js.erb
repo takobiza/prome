@@ -1,0 +1,2 @@
+$(".ajax_template").html("<%= j(render @templates) %>");
+$(".ajax_template").append("<%= j(paginate @templates, :remote => true) %>");
