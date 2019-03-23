@@ -462,9 +462,38 @@ ol.cp_clist li::before {
 }
 
 .icon-block {
-  padding: 96px  15px 0px;
-  text-align: center;
+    padding: 96px 15px 0px;
+    text-align: center;
 }
+
 .icon-block .material-icons {
     font-size: inherit;
+}
+
+.complete {
+    &_text {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3;
+        background: #FFF;
+        border: solid 3px #6091d3;
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'font1';
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &_content {
+        &_br {
+            border-bottom: 2px solid #ff3333;
+            font-size: 120%;
+            text-align: center;
+            width: 240px;
+        }
+    }
 }

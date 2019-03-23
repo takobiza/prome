@@ -8,3 +8,16 @@
     background-color: #87ceeb;
   }
 }
+
+.loading {
+  display: none;
+  height: 46px;
+  left: 50%;
+  margin-top: -23px;
+  margin-left: -23px;
+  position: fixed;
+  _position: absolute;
+  top: 50%;
+  width: 46px;
+  z-index: 10000;
+}

@@ -7,10 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="turbolinks-cache-control" content="no-cache">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-loading-bar.min.css" />
   </head>
 
   <body>
+    <div class="wrap">
     <nav>
       <div class="nav-wrapper">
         <a href="/" class="brand-logo center">ProMe</a>
@@ -28,5 +32,6 @@
       <%= content_tag(:div, value, class: "flash flash__#{key}") %>
     <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>

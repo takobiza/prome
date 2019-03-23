@@ -141,3 +141,18 @@ i.large {
 .wizard > .content {
     min-height: 16em !important;
 }
+
+.user{
+  &_name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &_image {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    border : solid 3px #333;
+    border-radius: 50%;
+  }
+}
