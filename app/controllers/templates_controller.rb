@@ -2,7 +2,7 @@ class TemplatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @templates = Template.where(user_id: current_user.id);
+    @templates = Template.where(user_id: current_user.id).page(params[:page]).per(3);
   end
 
   def new
@@ -10,8 +10,13 @@ class TemplatesController < ApplicationController
   end
 
   def create
-    @template = Template.create(template_params);
-    redirect_to templates_path, notice: 'テンプレートを作成しました'
+    @template = Template.new(template_params);
+    if @template.save
+      redirect_to templates_path, notice: 'テンプレートを作成しました'
+    else
+      flash.now[:notice] = "テンプレートの作成に失敗しました"
+      render :new
+    end
   end
 
   def show
@@ -21,6 +26,6 @@ class TemplatesController < ApplicationController
 
   private
   def template_params
-    params.require(:template).permit(:question1, :question2, :question3, :question4, :question5).merge(user_id: current_user.id);
+    params.permit(:question1, :question2, :question3, :question4, :question5).merge(user_id: current_user.id);
   end
 end

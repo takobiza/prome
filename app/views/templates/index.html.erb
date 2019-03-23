@@ -1,6 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="content">
+      <div class="center-align user_name">
+        <%= current_user.name%>
+      </div>
+
+      <div class="center-align">
+        <div class="user_image">
+          <%= image_tag current_user.image, :size =>'160x240',class: "user_image_sicre"%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="content">
       <div class="grid-example col s12 center-align header-title"><h1>答えてもらうプロフィールのテンプレートを作成しましょう</h1></div>
       <%= link_to new_template_path do %>
         <div class="grid-example col s12 center-align header-title"><button class="button1">作成する</button></div>
@@ -11,7 +26,10 @@
   <div class="row">
     <div class="container content">
       <h2> あなたが作ったテンプレート一覧</h2>
-      <%= render @templates %>
+      <div class="ajax_template">
+        <%= render @templates %>
+        <%= paginate @templates%>
+      </div>
     </div>
   </div>
 </div>

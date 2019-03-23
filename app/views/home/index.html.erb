@@ -2,17 +2,46 @@
   <div class="container">
     <div class="row">
       <div class="header-content">
-        <div class="grid-example col s12 center-align header-title"><h1>ProMe</h1></div>
-        <div class="grid-example col s12 center-align"><span>~~~~あなたのプロフィールを私に~~~~</span></div>
-      </div>
-      <div class="header-sidecontent center-align">
-        <p>URLを共有するだけでプロフィールが貰えるかも？</p>
-        <%= link_to templates_path do %>
-          <button class="button1 center-align">早速使ってみる</button>
-        <% end %>
+        <div class="grid-example col s12 center-align header-title">
+          <h1><%= image_tag 'logo.jpg'%></h1>
+        </div>
+        <div class="grid-example col s12 center-align"><span class= "top-h2">プロフィール手帳作成アプリ</span></div>
       </div>
     </div>
+    <div class="center-align">
+        <span class="top-h3">簡単3ステップでプロフィール帳が作れます</span>
+      </div>
   </div>
+
+<div class="row">
+    <div class="col s12 m4">
+        <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="large material-icons">edit</i></h2>
+            <span class=" text-size-middle">Create Template</span>
+            <p class="center">答えて貰いたい5つの質問を考えてテンプレートを作成しましょう</p>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="large material-icons">group</i></h2>
+            <span class="text-size-middle">URL Sharing</span>
+            <p class="light">作ったテンプレートのURLを書いて欲しい人に共有しましょう</p>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="large material-icons">event_note</i></h2>
+            <span class=" text-size-middle">Look Forward to Profile</span>
+            <p class="light">あとはプロフィールを待つだけです</p>
+        </div>
+    </div>
+</div>
+<div class="center-align">
+    <%= link_to templates_path do %>
+    <button class="button1 center-align">早速使ってみる</button>
+    <% end %>
+</div>
+
 </header>
 
 

@@ -7,17 +7,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="turbolinks-cache-control" content="no-cache">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-loading-bar.min.css" />
   </head>
 
   <body>
+    <div class="wrap">
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">ProMe</a>
+        <a href="/" class="brand-logo center">ProMe</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
-            <li><%= link_to "テンプレートを作成する", new_template_path %></li>
+            <li><%= link_to "マイページへ", templates_path %></li>
           <% else%>
             <li><%= link_to "ログイン", user_twitter_omniauth_authorize_path%></li>
           <% end %>
@@ -28,5 +32,6 @@
       <%= content_tag(:div, value, class: "flash flash__#{key}") %>
     <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>

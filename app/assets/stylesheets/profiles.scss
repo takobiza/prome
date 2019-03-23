@@ -20,6 +20,7 @@
     background-size: contain;
     height: 1400px;
     width: 1000px;
+    font-family: 'font1';
 
     &_introduction {
         margin-top: 30px;
@@ -458,4 +459,41 @@ ol.cp_clist li::before {
     border-bottom: 5px solid #1b2538;
     text-align: center;
     color: black !important;
+}
+
+.icon-block {
+    padding: 96px 15px 0px;
+    text-align: center;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.complete {
+    &_text {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3;
+        background: #FFF;
+        border: solid 3px #6091d3;
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'font1';
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &_content {
+        &_br {
+            border-bottom: 2px solid #ff3333;
+            font-size: 120%;
+            text-align: center;
+            width: 469px;
+        }
+    }
 }
