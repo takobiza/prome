@@ -1,5 +1,6 @@
 class TemplatesController < ApplicationController
   before_action :authenticate_user!
+  protect_from_forgery :except => [:destroy]
 
   def index
     @templates = Template.where(user_id: current_user.id).page(params[:page]).per(3);
@@ -22,6 +23,14 @@ class TemplatesController < ApplicationController
   def show
     @template = Template.find(Base64.decode64(params[:id]));
     @profiles = @template.profiles.includes(:respondent);
+  end
+
+  def destroy
+    @template = Template.find(params[:id])
+
+    if @template.destroy
+      redirect_to templates_path, notice: 'テンプレートを削除しました'
+    end
   end
 
   private

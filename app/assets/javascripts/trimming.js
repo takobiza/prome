@@ -132,6 +132,7 @@ $(function() {
     $('.close_btn').on('click', function() {
         $('.overlay').fadeOut();
         $('#crop_img').remove();
+        document.getElementById("upicon").value = '';
         $('.cropper-container').remove();
     });
 
