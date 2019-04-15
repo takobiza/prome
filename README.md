@@ -37,7 +37,6 @@
 ## Profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|respondents_id|references|null: false, foreign_key: true|
 |templates_id|references|null: false, foreign_key: true|
 
 ### Association

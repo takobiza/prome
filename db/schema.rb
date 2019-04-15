@@ -25,11 +25,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_143635) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "respondent_id"
     t.bigint "template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["respondent_id"], name: "index_profiles_on_respondent_id"
     t.index ["template_id"], name: "index_profiles_on_template_id"
   end
 
@@ -86,7 +84,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_143635) do
   end
 
   add_foreign_key "answers", "respondents"
-  add_foreign_key "profiles", "respondents"
   add_foreign_key "profiles", "templates"
   add_foreign_key "respondents", "profiles"
   add_foreign_key "templates", "users"
