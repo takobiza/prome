@@ -1,24 +1,25 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- @font-face{
-   font-family: "font1";
-   src: font-url('KFhimaji.otf') format('truetype');
- }
+@font-face {
+    font-family: "font1";
+    src: font-url('KFhimaji.otf') format('truetype');
+}
 
-.header{
-  background-image: image-url('background1.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 885px;
-  width: 100vw;
-  &-content{
-    padding-top: 160px;
-  }
+.header {
+    background-image: image-url('background1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 885px;
+    width: 100vw;
+
+    &-content {
+        padding-top: 160px;
+    }
 }
 
 .pace-running .wrap {
-  display:none;
+    display: none;
 }
 
 nav ul a {
@@ -32,14 +33,14 @@ nav ul a {
 }
 
 .pagenate-box {
-        margin-top: 40px;
-        width: 700px;
-        height: 44px;
-        list-style-type: none;
-        text-align: center;
+    margin-top: 40px;
+    width: 700px;
+    height: 44px;
+    list-style-type: none;
+    text-align: center;
 
-        ul {
-          .page {
+    ul {
+        .page {
             max-width: 44px;
             max-height: 44px;
             border-radius: 4px;
@@ -50,27 +51,35 @@ nav ul a {
             box-sizing: border-box;
 
             a {
-              &:link {
-                color: #000;
-              }
-              &:visited {
-                color: #000;
-              }
-              &:hover {
-                color: #000;
-              }
-              &:active {
-                color: #000;
-              }
-              text-decoration: none;
+                &:link {
+                    color: #000;
+                }
+
+                &:visited {
+                    color: #000;
+                }
+
+                &:hover {
+                    color: #000;
+                }
+
+                &:active {
+                    color: #000;
+                }
+
+                text-decoration: none;
             }
-          }
-          .current {
+        }
+
+        .current {
             background-color: #ea352d;
             color: #fff;
-          }
+        }
 
-          .next, .last, .first, .prev {
+        .next,
+        .last,
+        .first,
+        .prev {
             max-width: 44px;
             max-height: 44px;
             border-radius: 4px;
@@ -81,20 +90,25 @@ nav ul a {
             box-sizing: border-box;
 
             a {
-              &:link {
-                color: #000;
-              }
-              &:visited {
-                color: #000;
-              }
-              &:hover {
-                color: #000;
-              }
-              &:active {
-                color: #000;
-              }
-              text-decoration: none;
+                &:link {
+                    color: #000;
+                }
+
+                &:visited {
+                    color: #000;
+                }
+
+                &:hover {
+                    color: #000;
+                }
+
+                &:active {
+                    color: #000;
+                }
+
+                text-decoration: none;
             }
-          }
+        }
+    }
 }
-}
+

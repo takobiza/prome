@@ -33,3 +33,22 @@
     </div>
   </div>
 </div>
+<aside class = "is-modal">
+          <div class = "is-modal__inner">
+            <div class = "is-modal__body">
+              <p>確認</p>
+              <br />
+              <div class="is-modal__body_gray">
+
+              </div>
+              <br />
+              作成して貰ったプロフィールも削除されますが、<br />本当にこのテンプレートを削除してよろしいですか？
+              <div class = "cancel-btn">
+                キャンセル
+              </div>
+              <div class = "is-modal__body_delete">
+                <%= button_to "削除する", "#", method: :delete , class: "delete-change cancel-btn", onfocus:"this.blur();"%>
+              </div>
+            </div>
+          </div>
+        </aside>

@@ -1,6 +1,6 @@
 class Respondent < ApplicationRecord
   belongs_to :profile
-  has_one :answer
+  has_one :answer, dependent: :destroy
   mount_uploader :image, MessageImageUploader
   enum firstperson: {watashi: 0, ore: 1, boku: 2,atashi: 3}
   attr_writer :year, :month, :day
