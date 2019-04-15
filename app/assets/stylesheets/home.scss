@@ -6,17 +6,12 @@
    src: font-url('KFhimaji.otf') format('truetype');
  }
 
-
-
-// body{
-//   font-family: 'font1';
-// }
-
 .header{
   background-image: image-url('background1.jpg');
   background-repeat: no-repeat;
-  background-size:  cover ;
-  height: 800px;
+  background-size: contain;
+  height: 885px;
+  width: 100vw;
   &-content{
     padding-top: 160px;
   }
@@ -34,4 +29,72 @@ nav ul a {
     margin-right: 20px;
     padding: 0px 20px;
     cursor: pointer;
+}
+
+.pagenate-box {
+        margin-top: 40px;
+        width: 700px;
+        height: 44px;
+        list-style-type: none;
+        text-align: center;
+
+        ul {
+          .page {
+            max-width: 44px;
+            max-height: 44px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: solid 1px #ccc;
+            font-size: 14px;
+            padding: 13px 15px;
+            box-sizing: border-box;
+
+            a {
+              &:link {
+                color: #000;
+              }
+              &:visited {
+                color: #000;
+              }
+              &:hover {
+                color: #000;
+              }
+              &:active {
+                color: #000;
+              }
+              text-decoration: none;
+            }
+          }
+          .current {
+            background-color: #ea352d;
+            color: #fff;
+          }
+
+          .next, .last, .first, .prev {
+            max-width: 44px;
+            max-height: 44px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: solid 1px #ccc;
+            font-size: 14px;
+            padding: 13px 15px;
+            box-sizing: border-box;
+
+            a {
+              &:link {
+                color: #000;
+              }
+              &:visited {
+                color: #000;
+              }
+              &:hover {
+                color: #000;
+              }
+              &:active {
+                color: #000;
+              }
+              text-decoration: none;
+            }
+          }
+}
 }

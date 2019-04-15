@@ -26,8 +26,8 @@
   <div class="row">
     <div class="container content">
       <h2> あなたが作ったテンプレート一覧</h2>
-      <div class="ajax_template">
         <%= render @templates %>
+      <div class="pagenate-box">
         <%= paginate @templates%>
       </div>
     </div>
