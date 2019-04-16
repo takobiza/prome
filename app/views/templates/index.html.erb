@@ -1,54 +1,51 @@
 <div class="container">
-  <div class="row">
-    <div class="content">
-      <div class="center-align user_name">
-        <%= current_user.name%>
-      </div>
-
-      <div class="center-align">
-        <div class="user_image">
-          <%= image_tag current_user.image, :size =>'160x240',class: "user_image_sicre"%>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="content">
-      <div class="grid-example col s12 center-align header-title"><h1>答えてもらうプロフィールのテンプレートを作成しましょう</h1></div>
-      <%= link_to new_template_path do %>
-        <div class="grid-example col s12 center-align header-title"><button class="button1">作成する</button></div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="container content">
-      <h2> あなたが作ったテンプレート一覧</h2>
-        <%= render @templates %>
-      <div class="pagenate-box">
-        <%= paginate @templates%>
-      </div>
-    </div>
-  </div>
-</div>
-<aside class = "is-modal">
-          <div class = "is-modal__inner">
-            <div class = "is-modal__body">
-              <p>確認</p>
-              <br />
-              <div class="is-modal__body_gray">
-
-              </div>
-              <br />
-              作成して貰ったプロフィールも削除されますが、<br />本当にこのテンプレートを削除してよろしいですか？
-              <div class = "cancel-btn">
-                キャンセル
-              </div>
-              <div class = "is-modal__body_delete">
-                <%= button_to "削除する", "#", method: :delete , class: "delete-change cancel-btn", onfocus:"this.blur();"%>
-              </div>
+    <div class="row">
+        <div class="content">
+            <div class="center-align user_name">
+                <%= current_user.name%>
             </div>
-          </div>
-        </aside>
+            <div class="center-align">
+                <div class="user_image">
+                    <%= image_tag current_user.image, :size =>'160x240',class: "user_image_sicre"%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="content">
+            <div class="grid-example col s12 center-align header-title">
+                <h1>答えてもらうプロフィールのテンプレートを作成しましょう</h1>
+            </div>
+            <%= link_to new_template_path do %>
+            <div class="grid-example col s12 center-align header-title"><button class="button1">作成する</button></div>
+            <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container content">
+            <h2> あなたが作ったテンプレート一覧</h2>
+            <%= render @templates %>
+            <div class="pagenate-box">
+                <%= paginate @templates%>
+            </div>
+        </div>
+    </div>
+</div>
+<aside class="is-modal">
+    <div class="is-modal__inner">
+        <div class="is-modal__body">
+            <p>確認</p>
+            <br />
+            <div class="is-modal__body_gray">
+            </div>
+            <br />
+            作成して貰ったプロフィールも削除されますが、<br />本当にこのテンプレートを削除してよろしいですか？
+            <div class="cancel-btn">
+                キャンセル
+            </div>
+            <div class="is-modal__body_delete">
+                <%= button_to "削除する", "#", method: :delete , class: "delete-change cancel-btn", onfocus:"this.blur();"%>
+            </div>
+        </div>
+    </div>
+</aside>
