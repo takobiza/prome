@@ -80,3 +80,4 @@ gem 'twitter'
 gem 'rails-jquery-steps'
 gem 'sweetalert-rails'
 gem 'kaminari'
+gem "obfuscatable"
