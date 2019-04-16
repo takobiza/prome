@@ -149,10 +149,12 @@ i.large {
   }
 
   &_image {
-    height: 250px;
-    width: 250px;
-    margin: auto;
-    border : solid 3px #333;
-    border-radius: 50%;
+    &_sicre{
+      height: 250px;
+      width: 250px;
+      margin: auto;
+      border : solid 3px #333;
+      border-radius: 50%;
+    }
   }
 }
