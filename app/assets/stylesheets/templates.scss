@@ -158,3 +158,13 @@ i.large {
     }
   }
 }
+
+.fa-trash-alt{
+  color: #C0C0C0;
+  cursor: pointer;
+  cursor: hand;
+  margin-left: 5px;
+  &:hover {
+    color: #0099e8;
+  }
+}
