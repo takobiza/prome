@@ -3,11 +3,11 @@ class TemplatesController < ApplicationController
   protect_from_forgery :except => [:destroy]
 
   def index
-    @templates = Template.where(user_id: current_user.id).page(params[:page]).per(3);
+    @templates = Template.where(user_id: current_user.id).page(params[:page]).per(3)
   end
 
   def new
-    @template = Template.new();
+    @template = Template.new()
   end
 
   def create
@@ -21,8 +21,8 @@ class TemplatesController < ApplicationController
   end
 
   def show
-    @template = Template.find(Base64.decode64(params[:id]));
-    @profiles = @template.profiles.includes(:respondent);
+    @template = Template.find(Base64.decode64(params[:id]))
+    @profiles = @template.profiles.includes(:respondent)
   end
 
   def destroy
@@ -35,6 +35,6 @@ class TemplatesController < ApplicationController
 
   private
   def template_params
-    params.permit(:question1, :question2, :question3, :question4, :question5).merge(user_id: current_user.id);
+    params.permit(:question1, :question2, :question3, :question4, :question5).merge(user_id: current_user.id)
   end
 end
