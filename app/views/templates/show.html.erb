@@ -54,7 +54,7 @@
                     </div>
                     <div>
                         <%= link_to "詳細をみる",template_profile_path(@template,profile)%>
-                        <%= icon 'fas', 'trash-alt', class: 'is-modal-profile-icon', "data-id": profile.id, "data-template-id": @template.id, "data-name": profile.respondent.name%>
+                        <%= icon 'fas', 'trash-alt', class: 'is-modal-profile-icon', "data-id": profile.to_param, "data-template-id": @template.to_param, "data-name": profile.respondent.name%>
                     </div>
                 </div>
                 <% end %>

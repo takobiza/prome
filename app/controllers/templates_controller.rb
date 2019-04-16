@@ -21,7 +21,7 @@ class TemplatesController < ApplicationController
   end
 
   def show
-    @template = Template.find(Base64.decode64(params[:id]))
+    @template = Template.find(params[:id])
     @profiles = @template.profiles.includes(:respondent)
   end
 

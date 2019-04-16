@@ -19,7 +19,7 @@
           <%= link_to "テンプレートURLを共有する", template_profiles_path(template)%>
           <%= link_to "書いてくれたプロフィールをみる", template_path(template)%>
 
-          <%= icon 'fas', 'trash-alt', class: 'is-modal-icon', "data-id": template.id, "data-question1": template.question1, "data-question2": template.question2, "data-question3": template.question3,"data-question4": template.question4,"data-question5": template.question5%>
+          <%= icon 'fas', 'trash-alt', class: 'is-modal-icon', "data-id": template.to_param, "data-question1": template.question1, "data-question2": template.question2, "data-question3": template.question3,"data-question4": template.question4,"data-question5": template.question5%>
 
         </div>
       </div>
