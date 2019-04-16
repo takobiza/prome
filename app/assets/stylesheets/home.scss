@@ -7,16 +7,20 @@
 }
 
 .header {
-    background-image: image-url('/images/background1.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 885px;
+    height: 800px;
+    display: block;
     width: 100vw;
-
+    &-background{
+      background-image: image-url('/images/background1.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 800px;
+    }
     &-content {
         padding-top: 160px;
     }
 }
+
 
 .pace-running .wrap {
     display: none;

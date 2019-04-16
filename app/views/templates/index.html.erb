@@ -12,19 +12,28 @@
         </div>
     </div>
     <div class="row">
-        <div class="content">
-            <div class="grid-example col s12 center-align header-title">
-                <h1>答えてもらうプロフィールのテンプレートを作成しましょう</h1>
+        <div class="content mypage-box">
+            <div class="grid-example col s12 center-align mypage-box-content">
+                答えてもらうプロフィールのテンプレートを作成しましょう
             </div>
             <%= link_to new_template_path do %>
-            <div class="grid-example col s12 center-align header-title"><button class="button1">作成する</button></div>
+              <div class="grid-example col s12 center-align"><button class="button1">作成する</button></div>
             <% end %>
         </div>
     </div>
     <div class="row">
-        <div class="container content">
-            <h2> あなたが作ったテンプレート一覧</h2>
-            <%= render @templates %>
+        <div class="container content mypage-box-content">
+             あなたが作ったテンプレート一覧
+            <div class="template_box">
+              <% if @templates.length > 0 %>
+                <%= render @templates %>
+              <% else %>
+                <div class="template_box-no_img">
+                  <%= icon 'fa', 'address-book'%>
+                </div>
+                <p class="template_box-no_content">まだプロフィールがありません</p>
+              <% end %>
+            </div>
             <div class="pagenate-box">
                 <%= paginate @templates%>
             </div>
