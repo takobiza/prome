@@ -12,7 +12,8 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(template_id: Base64.decode64(params[:template_id]))
+    template = Template.find(params[:template_id])
+    @profile = Profile.new(template_id: template.id)
     if @profile.save
       @respondent = Respondent.new(respondent_param(@profile))
       if @respondent.save
@@ -35,17 +36,17 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(Base64.decode64(params[:id]))
+    @profile = Profile.find(params[:id])
     @respondent = @profile.respondent;
     @answer = @respondent.answer;
   end
 
   def destroy
     @profile = Profile.find(params[:id])
-
+    template = Template.find(params[:template_id])
     nickname = @profile.respondent.name
     if @profile.destroy
-      redirect_to templates_path, notice: nickname+'さんのプロフィールを削除しました'
+      redirect_to template_path(template), notice: nickname+'さんのプロフィールを削除しました'
     end
   end
 
@@ -59,7 +60,7 @@ class ProfilesController < ApplicationController
   end
 
   def set_template
-    @template = Template.includes(:user).find(Base64.decode64(params[:template_id]));
+    @template = Template.includes(:user).find(params[:template_id]);
   end
 
 end

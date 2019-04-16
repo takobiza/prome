@@ -149,10 +149,22 @@ i.large {
   }
 
   &_image {
-    height: 250px;
-    width: 250px;
-    margin: auto;
-    border : solid 3px #333;
-    border-radius: 50%;
+    &_sicre{
+      height: 250px;
+      width: 250px;
+      margin: auto;
+      border : solid 3px #333;
+      border-radius: 50%;
+    }
+  }
+}
+
+.fa-trash-alt{
+  color: #C0C0C0;
+  cursor: pointer;
+  cursor: hand;
+  margin-left: 5px;
+  &:hover {
+    color: #0099e8;
   }
 }

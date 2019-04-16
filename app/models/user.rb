@@ -20,6 +20,10 @@ class User < ApplicationRecord
       )
     end
 
+    if user.image != auth.info.image_tag
+      user.update(image: auth.info.image)
+    end
+
     user
   end
 
