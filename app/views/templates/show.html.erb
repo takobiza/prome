@@ -54,6 +54,7 @@
                     </div>
                     <div>
                         <%= link_to "詳細をみる",template_profile_path(@template,profile)%>
+                        <%= icon 'fas', 'trash-alt', class: 'is-modal-profile-icon', "data-id": profile.id, "data-template-id": @template.id, "data-name": profile.respondent.name%>
                     </div>
                 </div>
                 <% end %>
@@ -81,3 +82,21 @@
     </div>
 </div>
 <% end %>
+<aside class="is-modal">
+    <div class="is-modal__inner">
+        <div class="is-modal__body">
+            <p>確認</p>
+            <br />
+            <div class="is-modal__body_gray">
+            </div>
+            <br />
+            本当にこのプロフィールを削除してよろしいですか？
+            <div class="cancel-btn">
+                キャンセル
+            </div>
+            <div class="is-modal__body_delete">
+                <%= button_to "削除する", "#", method: :delete , class: "delete-change cancel-btn", onfocus:"this.blur();"%>
+            </div>
+        </div>
+    </div>
+</aside>

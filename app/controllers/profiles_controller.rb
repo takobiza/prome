@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_template, only:[:index, :new,:show]
   before_action :authenticate_user!, except:[:new,:create,:complete]
+  protect_from_forgery :except => [:destroy]
 
   def index
 
@@ -11,9 +12,9 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(template_id: Base64.decode64(params[:template_id]));
+    @profile = Profile.new(template_id: Base64.decode64(params[:template_id]))
     if @profile.save
-      @respondent = Respondent.new(respondent_param(@profile));
+      @respondent = Respondent.new(respondent_param(@profile))
       if @respondent.save
         if Answer.create(answer_param(@respondent));
           respond_to do |format|
@@ -34,9 +35,18 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(Base64.decode64(params[:id]));
+    @profile = Profile.find(Base64.decode64(params[:id]))
     @respondent = @profile.respondent;
     @answer = @respondent.answer;
+  end
+
+  def destroy
+    @profile = Profile.find(params[:id])
+
+    nickname = @profile.respondent.name
+    if @profile.destroy
+      redirect_to templates_path, notice: nickname+'さんのプロフィールを削除しました'
+    end
   end
 
   private
