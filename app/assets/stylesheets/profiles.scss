@@ -497,3 +497,44 @@ ol.cp_clist li::before {
         }
     }
 }
+
+.template_box{
+    border: solid 3px black;
+    min-height: 344px;
+    width: 800px;
+    &-no{
+        &_content{
+            color: #ccc;
+            font-weight: bold;
+            margin-top: 35px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        &_img{
+            color: #ccc;
+            font-weight: bold;
+            margin-top: 35px;
+            text-align: center;
+            font-size: 124px;
+        }
+    }
+}
+
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    width: 640px;
+    margin: 32px auto;
+}
+
+.mypage-box{
+    &-content{
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+}
