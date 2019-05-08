@@ -8,7 +8,7 @@
               質問3: <%= template.question3%><br />
               質問4: <%= template.question4%><br />
               質問5: <%= template.question5%><br />
-              作成日: <%= template.created_at.strftime("%Y/%m/%d %H:%M")%><br />
+              作成日: <%= template.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")%><br />
               プロフィール数: <%= template.profiles.length%></p>
             </div>
             <p>作成日: <%= template.created_at.strftime("%Y/%m/%d %H:%M")%></p>

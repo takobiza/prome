@@ -51,7 +51,7 @@
                     <div class="template_content_row1">
                         <div>
                             投稿日時:
-                            <%= profile.created_at.strftime("%Y/%m/%d %H:%M")%>
+                            <%= profile.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M")%>
                         </div>
                         <div>
                             <%= link_to "詳細をみる",template_profile_path(@template,profile)%>
