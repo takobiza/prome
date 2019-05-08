@@ -131,3 +131,32 @@ input.button2:hover:before {
     transform: translateY(4px);
     border-bottom: none;
 }
+
+.profile-close-btn {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+    left: 100px;
+    bottom: 200px;
+  }
+  .profile-close-btn span::before,
+  .profile-close-btn span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 84%;
+    height: 16%;
+    margin: -8% 0 0 -42%;
+    background: #E91E63;
+  }
+  .profile-close-btn span::before {
+    transform: rotate(-45deg);
+  }
+  .profile-close-btn span::after {
+    transform: rotate(45deg);
+  }
