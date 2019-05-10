@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :set_template, only:[:index, :new,:show]
   before_action :authenticate_user!, except:[:new,:create,:complete]
-  protect_from_forgery :except => [:destroy]
-
+  protect_from_forgery :except => [:destroy]  
+  
   def index
 
   end

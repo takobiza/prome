@@ -165,6 +165,7 @@ label.placeholder {
     color: black !important;
     padding-left: 15px;
     padding-top: 7px;
+    font-size: 14px;
 }
 
 #img_field {
@@ -538,3 +539,15 @@ ol.cp_clist li::before {
     }
 
 }
+
+.hard{
+    color: #333;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'font1', sans-serif; 
+    background-image: image-url('/images/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    line-height: 200px;
+}
+

@@ -82,3 +82,4 @@ gem 'sweetalert-rails'
 gem 'kaminari'
 gem 'fog'
 gem "acts_as_hashids"
+gem 'turn-rails', '~> 0.1.0'
