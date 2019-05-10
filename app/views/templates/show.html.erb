@@ -1,10 +1,10 @@
 <% if @profiles.length() != 0 %>
-<div class="bxslider-bottom">
-    <ul class="bxslider">
-        <% @profiles.each do |profile|%>
-        <li>
-            <div class="template_content">
-                <div class="bxslider_content">
+<div id="flipbook">
+	<div class="hard"> プロフィール手帳</div>
+	<div class="hard"></div>
+    <% @profiles.each do |profile|%>
+        <div class="template_content">
+                
                     <%= form_with model: profile.respondent, local: true, class: "col s12" do |f| %>
                     <div class="template_content_introduction">
                         <div class="profile_content_introduction-text">
@@ -43,7 +43,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="field image">
+                        <div class="field image img_profile">
                             <%= f.label '似顔絵や写真など自分を表す写真を貼ってね' %>
                             <img src="<%= profile.respondent.image%>">
                         </div>
@@ -59,11 +59,10 @@
                         </div>
                     </div>
                     <% end %>
-                </div>
-            </div>
-        </li>
-        <% end %>
-    </ul>
+                
+        </div>
+    <% end %>
+    <div class="hard"></div>
 </div>
 <% else %>
 <div class="container">
